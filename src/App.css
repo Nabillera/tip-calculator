@@ -189,10 +189,13 @@ span {
 }
 
 @media (min-width: 920px) {
+  #app{
+    position: relative;
+  }
   #logo {
     padding-bottom: 88px;
     position: absolute;
-    top: 80px;
+    bottom: 430px;
   }
   #calculator {
     flex-direction: row;
