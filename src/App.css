@@ -191,6 +191,8 @@ span {
 @media (min-width: 920px) {
   #logo {
     padding-bottom: 88px;
+    position: absolute;
+    top: 80px;
   }
   #calculator {
     flex-direction: row;
