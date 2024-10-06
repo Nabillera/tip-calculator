@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function InputField({ name, icon, label, onChangeAmount }) {
+export default function InputField({ name, icon, label, onChangeAmount, value }) {
   const [isZero, setIsZero] = useState(false);
   const handleChange = (event) => {
     onChangeAmount(name, event.target.value);
@@ -22,6 +22,7 @@ export default function InputField({ name, icon, label, onChangeAmount }) {
         className={isZero ? "wrong-input" : undefined}
         onChange={handleChange}
         placeholder={0}
+        value={value}
       />
     </div>
   );

@@ -1,4 +1,4 @@
-export default function TipOptions({ onChangeAmount }) {
+export default function TipOptions({ onChangeAmount, value }) {
   const setTips = [5, 10, 15, 25, 50];
   const handleTipAmount = (amount) => {
     onChangeAmount("tip", amount);
@@ -22,6 +22,7 @@ export default function TipOptions({ onChangeAmount }) {
           id="custom-tip-option"
           placeholder="Custom"
           maxLength={3}
+          value={value}
         />
       </div>
     </div>

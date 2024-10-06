@@ -5,12 +5,12 @@ import "./App.css";
 import InputField from "./components/InputField";
 import TipOptions from "./components/TipOptions";
 import CalculatedTipBoard from "./components/CalculatedTipBoard";
-import { useState, useSyncExternalStore } from "react";
+import { useState } from "react";
 
 const INPUT_NUMBERS = {
-  bill: undefined,
-  people: undefined,
-  tip: undefined,
+  bill: "",
+  people: "",
+  tip: "",
 };
 
 function App() {
@@ -27,7 +27,6 @@ function App() {
 
   const handleReset = () => {
     setBillVariables(INPUT_NUMBERS);
-    console.log(billVariables);
   };
 
   return (
@@ -41,13 +40,18 @@ function App() {
             name="bill"
             label="Bill"
             onChangeAmount={handleChangeAmount}
+            value={billVariables.bill}
           />
-          <TipOptions name="tip" onChangeAmount={handleChangeAmount} />
+          <TipOptions
+            onChangeAmount={handleChangeAmount}
+            value={billVariables.tip}
+          />
           <InputField
             icon={PersonIcon}
             name="people"
             label="Number of people"
             onChangeAmount={handleChangeAmount}
+            value={billVariables.people}
           />
         </div>
 
