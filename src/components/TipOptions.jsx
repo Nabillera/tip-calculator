@@ -5,7 +5,7 @@ export default function TipOptions({ onChangeAmount, value }) {
   };
 
   return (
-    <div style={{ margin: "32px 8px 32px 8px" }}>
+    <div id="tip-options-div">
       <p>Select Tip %</p>
       <div id="grid-container">
         {setTips.map((amount, index) => (

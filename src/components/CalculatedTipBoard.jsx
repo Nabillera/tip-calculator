@@ -21,8 +21,10 @@ export default function CalculatedTipBoard({ onReset, values }) {
 
   return (
     <div id="calculated-tip-div">
-      <CalculatedField value={tipPerPerson} label="Tip Amount" />
-      <CalculatedField value={totalPerPerson} label="Total" />
+      <div id="calculated-tip-inner">
+        <CalculatedField value={tipPerPerson} label="Tip Amount" />
+        <CalculatedField value={totalPerPerson} label="Total" />
+      </div>
       <button onClick={onReset} disabled={!isActive} id="reset-button">
         RESET
       </button>

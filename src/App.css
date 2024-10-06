@@ -96,7 +96,9 @@ input:focus {
   column-gap: 17px;
   row-gap: 16px;
 }
-
+#tip-options-div{
+  margin: 32px 8px 32px 8px;
+}
 .tip-option {
   background-color: #00474b;
   color: #ffffff;
@@ -122,11 +124,16 @@ input:focus {
   height: 257px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: #00474b;
   border-radius: 15px;
   margin-top: 32px;
   padding: 23px;
+}
+#calculated-tip-inner{
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
 }
 
 span {
@@ -137,6 +144,7 @@ span {
 .calculated-field {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .calculated-label-div {
   display: flex;
@@ -186,9 +194,10 @@ span {
   }
   #calculator {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 920px;
     max-width: none;
+    padding: 32px;
   }
 
   #calculator-inner {
@@ -199,6 +208,9 @@ span {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 14px;
     row-gap: 16px;
+  }
+  #tip-options-div{
+    margin: 32px 0 32px 0;
   }
   .tip-option {
     padding: 6px;
@@ -211,6 +223,8 @@ span {
   #calculated-tip-div {
     width: 413px;
     height: 417px;
+    margin: 0;
+    padding: 40px;
   }
 
   .calculated-amount {
