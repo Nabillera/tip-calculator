@@ -11,6 +11,7 @@ const INPUT_NUMBERS = {
   bill: "",
   people: "",
   tip: "",
+  customTip: "",
 };
 
 function App() {
@@ -18,6 +19,11 @@ function App() {
 
   const handleChangeAmount = (field, newVal) => {
     setBillVariables((previousValues) => {
+      if(field == "tip"){
+        previousValues.customTip = ""
+      }else if(field == "customTip"){
+        previousValues.tip = ""
+      }
       return {
         ...previousValues,
         [field]: newVal,
@@ -44,7 +50,7 @@ function App() {
           />
           <TipOptions
             onChangeAmount={handleChangeAmount}
-            value={billVariables.tip}
+            value={billVariables.customTip}
           />
           <InputField
             icon={PersonIcon}

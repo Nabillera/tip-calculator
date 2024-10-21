@@ -1,7 +1,12 @@
+import { useState } from "react";
+
 export default function TipOptions({ onChangeAmount, value }) {
   const setTips = [5, 10, 15, 25, 50];
-  const handleTipAmount = (amount) => {
-    onChangeAmount("tip", amount);
+  const [activeOption, setActiveOption] = useState();
+
+  const handleTipOption = (key, amount, index) => {
+    onChangeAmount(key, amount);
+    setActiveOption(index);
   };
 
   return (
@@ -10,15 +15,17 @@ export default function TipOptions({ onChangeAmount, value }) {
       <div id="grid-container">
         {setTips.map((amount, index) => (
           <button
-            className="tip-option"
+            className={`tip-option ${
+              activeOption == index ? "active" : undefined
+            }`}
             key={index}
-            onClick={() => handleTipAmount(amount)}
+            onClick={() => handleTipOption("tip", amount, index)}
           >
             {amount}%
           </button>
         ))}
         <input
-          onChange={(e) => handleTipAmount(e.target.value)}
+          onChange={(e) => handleTipOption("customTip", e.target.value)}
           id="custom-tip-option"
           placeholder="Custom"
           maxLength={3}

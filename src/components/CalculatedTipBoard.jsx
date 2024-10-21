@@ -5,14 +5,20 @@ const roundNumber = (num) => {
 };
 
 export default function CalculatedTipBoard({ onReset, values }) {
-  const { bill, people, tip } = { ...values };
-  const [billNum, peopleNum, tipNum] = [+bill, +people, +tip / 100];
+  const { bill, people, tip, customTip } = { ...values };
+  const [billNum, peopleNum, tipNum, customTipNum] = [
+    +bill,
+    +people,
+    +tip / 100,
+    +customTip / 100,
+  ];
 
   let tipPerPerson, totalPerPerson, isActive;
 
-  if (bill && people && tip) {
-    tipPerPerson = roundNumber((billNum * tipNum) / peopleNum);
-    totalPerPerson = roundNumber((billNum * (1 + tipNum)) / peopleNum);
+  if (bill && people != 0 && (tip || customTip)) {
+    let tipToUse = tip ? tipNum : customTipNum
+    tipPerPerson = roundNumber((billNum * tipToUse) / peopleNum);
+    totalPerPerson = roundNumber((billNum * (1 + tipToUse)) / peopleNum);
     isActive = true;
   } else {
     tipPerPerson, (totalPerPerson = 0);

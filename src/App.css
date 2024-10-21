@@ -108,7 +108,7 @@ input:focus {
   border-radius: 5px;
   transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 }
-.tip-option:focus {
+.tip-option.active {
   background-color: #26c2ae;
   border-color: #26c2ae;
   color: #00474b;
